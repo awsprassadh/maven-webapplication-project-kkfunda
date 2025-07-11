@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to KK DevOps</h1>
-<h1 align="center"> prassadh tech </h1>
+<h1 align="center"> KK FUNDA DEVOPS </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
