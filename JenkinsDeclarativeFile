@@ -32,19 +32,19 @@ pipeline {
 
         stage('Maven Package') {
             steps {
-                sh "mvn package"
+                sh "mvn clean package"
             }
         }
 
         stage('SonarQube Report') {
             steps {
-                sh "mvn sonar:sonar"
+                sh "mvn clean sonar:sonar"
             }
         }
 
         stage('Deploy to Nexus') {
             steps {
-                sh "mvn deploy"
+                sh "mvn clean deploy"
             }
         }
 
