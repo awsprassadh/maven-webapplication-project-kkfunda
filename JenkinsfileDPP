@@ -73,7 +73,7 @@ pipeline
         }
      }
 
-}
+} // pipeline ending
 // Method must be wrapped inside script block
 def notifyBuild(String buildStatus = 'STARTED')
   {
