@@ -66,28 +66,25 @@ pipeline
 } // pipeline ending
 
  post {
-        success {
+        always {
             script {
                 notifyBuild(currentBuild.result)
             }
         }
-        failure {
-            script {
-                notifyBuild(currentBuild.result)
-            }
-        }
-    }
+     }
 
 
 // Method must be wrapped inside script block
-def notifyBuild(String buildStatus = 'STARTED') {
+def notifyBuild(String buildStatus = 'STARTED')
+  {
     buildStatus = buildStatus ?: 'SUCCESS'
 
     def colorCode
     def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
     def summary = "${subject} (${env.BUILD_URL})"
 
-    switch (buildStatus) {
+    switch (buildStatus) 
+   {
         case 'STARTED':
             colorCode = '#FFFF00' // Yellow
             break
@@ -100,4 +97,4 @@ def notifyBuild(String buildStatus = 'STARTED') {
 
     slackSend(color: colorCode, message: summary, channel: '#qa-team')
     slackSend(color: colorCode, message: summary, channel: '#devops-team')
-}
+ }
