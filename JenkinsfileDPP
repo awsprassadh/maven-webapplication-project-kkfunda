@@ -63,9 +63,9 @@ pipeline
 	    
 	} // stages ending
 
-} // pipeline ending
+ // pipeline ending
 
- post {
+     post {
         always {
             script {
                 notifyBuild(currentBuild.result)
@@ -73,7 +73,7 @@ pipeline
         }
      }
 
-
+}
 // Method must be wrapped inside script block
 def notifyBuild(String buildStatus = 'STARTED')
   {
