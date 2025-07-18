@@ -46,7 +46,7 @@ node
       sh """
             curl -u prassadh:password \
             --upload-file /var/lib/jenkins/workspace/jio-scripted-way-pl/target/maven-web-application.war \
-            "http://15.206.212.37:9090/manager/text/deploy?path=/maven-web-application&update=true"
+            "http://http://13.204.101.111:9090/manager/text/deploy?path=/maven-web-application&update=true"
         """
           
     }
